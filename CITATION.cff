@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+title: >-
+  Protocolo reprodutível de recuperação e curadoria de literatura
+message: >-
+  Se este protocolo for útil à sua pesquisa, cite o artigo abaixo.
+type: software
+authors:
+  - given-names: João Guilherme
+    family-names: Machado Barbosa
+    affiliation: >-
+      Universidade do Estado de Mato Grosso (UNEMAT),
+      Programa de Pós-Graduação em Geografia, Cáceres — MT, Brasil
+    email: barbosa.joao@unemat.br
+  - given-names: Carla Bernadete
+    family-names: Madureira Cruz
+    affiliation: >-
+      Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro — RJ, Brasil
+    email: cmad@ufrj.br
+  - given-names: Raúl
+    family-names: Sánchez Vicens
+    affiliation: >-
+      Universidade Federal Fluminense (UFF),
+      Programa de Pós-Graduação em Geografia, Niterói — RJ, Brasil
+    email: rsvicens@id.uff.br
+  - given-names: Tiago Alexandre
+    family-names: Batista
+    affiliation: >-
+      Universidade do Estado de Mato Grosso (UNEMAT),
+      Programa de Pós-Graduação em Geografia, Cáceres — MT, Brasil
+    email: tiago.alexandre@unemat.br
+  - given-names: João Gustavo
+    family-names: Une Beppu
+    affiliation: >-
+      Universidade do Estado de Mato Grosso (UNEMAT),
+      Programa de Pós-Graduação em Geografia, Cáceres — MT, Brasil
+    email: joao.beppu@unemat.br
+abstract: >-
+  Protocolo reprodutível que parte de uma busca automatizada ampla em acervos de
+  acesso aberto e a reduz, por passos registrados, até uma lista de leitura
+  ordenada por relevância. Tudo o que é específico do tema está reunido em um
+  único arquivo de configuração, de modo que a aplicação a outro objeto de
+  qualquer área da ciência exige apenas editá-lo.
+keywords:
+  - revisão de literatura
+  - mapa sistemático
+  - PRISMA
+  - reprodutibilidade
+  - ciência aberta
+  - sensoriamento remoto
+  - áreas úmidas
+license: MIT
+repository-code: 'https://github.com/ProfJoaoGuilherme/Mapa-sistematico-py'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21840049
+    description: >-
+      DOI conceitual, resolve sempre para a versão mais recente
+  - type: doi
+    value: 10.5281/zenodo.21840050
+    description: >-
+      DOI desta versão (v1.0.0) — use este em citações
+version: 1.0.0
+doi: 10.5281/zenodo.21840050
+date-released: '2026-08-07'
+preferred-citation:
+  type: conference-paper
+  title: >-
+    Mapa sistemático da literatura sobre sensoriamento remoto de áreas úmidas:
+    um protocolo reprodutível de recuperação e curadoria (2020–2026)
+  authors:
+    - given-names: João Guilherme
+      family-names: Machado Barbosa
+    - given-names: Carla Bernadete
+      family-names: Madureira Cruz
+    - given-names: Raúl
+      family-names: Sánchez Vicens
+    - given-names: Tiago Alexandre
+      family-names: Batista
+    - given-names: João Gustavo
+      family-names: Une Beppu
+  collection-title: Anais do Simpósio de Geotecnologias no Pantanal
+  year: 2026

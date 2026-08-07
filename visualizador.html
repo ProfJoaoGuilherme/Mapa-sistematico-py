@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visualizador da lista de leitura</title>
+<style>
+  :root{--verde:#1f6e43;--cinza:#f4f5f7;--linha:#e2e5e9;--txt:#1c1e21}
+  *{box-sizing:border-box}
+  body{font:14px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:var(--txt);background:#fff}
+  header{background:var(--verde);color:#fff;padding:12px 18px}
+  header h1{font-size:16px;margin:0 0 8px}
+  .barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .barra input,.barra select,.barra button{font:inherit;padding:6px 9px;border:1px solid #cfd4da;border-radius:6px;background:#fff;color:var(--txt)}
+  .barra button{cursor:pointer}
+  .barra button:hover{background:var(--cinza)}
+  #busca{min-width:230px}
+  .contador{margin-left:auto;font-size:15px;font-weight:700;background:#fff;color:var(--verde);padding:5px 12px;border-radius:14px}
+  .facetas{display:flex;flex-wrap:wrap;gap:8px;padding:10px 18px;background:var(--cinza);border-bottom:1px solid var(--linha);align-items:flex-end}
+  .facetas label{font-size:12px;color:#444;display:flex;flex-direction:column;gap:2px}
+  .facetas button{font-size:12px;padding:6px 10px;border:1px solid #cfd4da;border-radius:6px;background:#fff;cursor:pointer}
+  details.legenda{padding:8px 18px;border-bottom:1px solid var(--linha);font-size:13px;background:#fbfcfd}
+  details.legenda summary{cursor:pointer;color:var(--verde);font-weight:600}
+  details.legenda dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:8px 0 0}
+  details.legenda dt{font-weight:600}
+  table{border-collapse:collapse;width:100%}
+  th,td{padding:7px 9px;border-bottom:1px solid var(--linha);text-align:left;vertical-align:top}
+  th{position:sticky;top:0;background:#fff;cursor:pointer;white-space:nowrap;user-select:none;border-bottom:2px solid var(--verde);font-size:12px;text-transform:uppercase;letter-spacing:.02em}
+  th:hover{background:var(--cinza)}
+  tr:hover td{background:#fbfcfd}
+  td.titulo{max-width:520px}
+  .sim{color:#1f6e43;font-weight:600}.nao{color:#999}
+  .cob3{background:#cdebd8}.cob2{background:#eef6f0}
+  .det{display:none;background:#fafbfc;font-size:13px;color:#333}
+  .det td{padding:10px 14px}.det b{color:var(--verde)}
+  .dec{cursor:pointer;border:1px solid #cfd4da;border-radius:5px;padding:2px 9px;background:#fff;font-size:12px;white-space:nowrap}
+  .inc{background:#cdebd8;border-color:#7cc79a;color:#12532f;font-weight:600}
+  .exc{background:#f3d2d2;border-color:#d99;color:#8a2b2b;font-weight:600}
+  a{color:var(--verde)}
+  .notabox{margin-top:10px;padding:8px 10px;background:#fff;border:1px solid var(--linha);border-radius:6px}
+  .notabox label{display:block;font-weight:600;color:var(--verde);font-size:12px;margin-bottom:4px}
+  .notabox .dica{display:block;font-weight:400;color:#777;font-size:11px;line-height:1.35;margin-top:2px}
+  textarea.nota{width:100%;font:13px inherit;font-family:inherit;padding:6px 8px;
+       border:1px solid #cfd4da;border-radius:5px;resize:vertical;box-sizing:border-box}
+  textarea.nota:focus{outline:2px solid #cdebd8;border-color:var(--verde)}
+  .salvo{font-size:11px;color:var(--verde)}
+  .notacel{max-width:190px;font-size:12px;color:#3a5}
+  .trad{font-size:11px;padding:2px 8px;border:1px solid var(--verde);border-radius:5px;background:#fff;color:var(--verde);cursor:pointer;margin-left:6px}
+  .trad:hover{background:#eef6f0}
+  .resumo-pt{margin-top:6px;color:#234}
+  #vazio{padding:40px;text-align:center;color:#888}
+  .ajuda{font-size:12px;color:#eaf5ee;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lista de leitura priorizada — visualizador</h1>
+  <div class="barra">
+    <input type="file" id="arquivo" accept=".csv,text/csv">
+    <input type="text" id="busca" placeholder="buscar em título, autor, resumo, palavras-chave…">
+    <button id="btnris">Baixar incluídos (RIS p/ Zotero)</button>
+    <button id="btnexport">Baixar CSV com decisões</button>
+    <span class="contador" id="contador">—</span>
+  </div>
+  <div class="ajuda">Abra o <code>lista_leitura_priorizada.csv</code>. Clique numa linha para ver o resumo; num cabeçalho para ordenar. Marque Incluir/Excluir e baixe em RIS (importa no Zotero) ou CSV.</div>
+</header>
+
+<details class="legenda">
+  <summary>O que significam as colunas</summary>
+  <dl>
+    <dt>ordem</dt><dd>posição na lista, do mais para o menos pertinente.</dd>
+    <dt>cobertura conceitos</dt><dd>quantos dos três conceitos de interesse o trabalho cobre (0 a 3): classificação/tipificação, multitemporal e acurácia.</dd>
+    <dt>classif tipif / multitemporal / acuracia</dt><dd>Sim/Não — o trabalho declara aquele conceito.</dd>
+    <dt>foco área úmida</dt><dd>centralidade do objeto (0 a 9): o termo de área úmida ponderado por campo (título &gt; palavras-chave &gt; resumo).</dd>
+    <dt>fusao / nuvem / metodo</dt><dd>Sim/Não — declara fusão radar-óptico, processamento em nuvem (GEE) e algum método (RF, aprendizado profundo ou OBIA); <i>metodo qual</i> diz qual.</dd>
+    <dt>cit percentil coorte</dt><dd>citação comparada aos trabalhos do mesmo ano (0 a 100); teses e produção nacional não têm citação indexada.</dd>
+    <dt>tese doutorado</dt><dd>Sim/Não — é tese de doutorado.</dd>
+    <dt>decisão</dt><dd>sua escolha: clique alterna — → Incluir → Excluir. Fica salva no navegador e entra nos arquivos exportados; não move nem envia nada sozinha.</dd>
+    <dt>disrupção</dt><dd>abra a linha e anote, no campo ao pé do resumo, o que a leitura revelou e a ordenação não podia ver. Salva sozinho a cada tecla, aparece aqui resumido e sai no CSV e no RIS (como nota).</dd>
+  </dl>
+</details>
+
+<div class="facetas" id="facetas"></div>
+<div id="tabela"></div>
+<div id="vazio">Carregue o arquivo <b>lista_leitura_priorizada.csv</b> para começar.<br>
+<span style="font-size:13px">Tem que ser o que termina em <b>.csv</b>. A planilha <code>.xlsx</code>, que está na mesma pasta, não é lida aqui.</span></div>
+
+<script>
+"use strict";
+function parseCSV(txt){
+  const linhas=[]; let campo="",lin=[],aspas=false;
+  for(let i=0;i<txt.length;i++){const c=txt[i];
+    if(aspas){ if(c=='"'){ if(txt[i+1]=='"'){campo+='"';i++;} else aspas=false;} else campo+=c; }
+    else{ if(c=='"')aspas=true; else if(c==','){lin.push(campo);campo="";}
+      else if(c=='\n'){lin.push(campo);linhas.push(lin);lin=[];campo="";}
+      else if(c=='\r'){} else campo+=c; } }
+  if(campo.length||lin.length){lin.push(campo);linhas.push(lin);}
+  const head=linhas.shift();
+  return linhas.filter(l=>l.length>1).map(l=>{const o={};head.forEach((h,i)=>o[h]=l[i]??"");return o;});
+}
+
+let DADOS=[], COLS=[], ordCol=null, ordDir=1, decis={}, notas={};
+const BOOL=new Set(["classif_tipif","multitemporal","acuracia","fusao","nuvem","metodo",
+  "tese_doutorado","recente_2025_26","conceito_classificacao_tipificacao",
+  "conceito_multitemporal","conceito_acuracia"]);
+const FACET=["tipo","tipo_documental","via","via_de_origem","ano","ano_de_publicacao",
+  "cobertura_conceitos","foco_area_umida","foco_objeto","classif_tipif","multitemporal",
+  "acuracia","fusao","nuvem","metodo","metodo_qual","estrato_qualis","tese_doutorado",
+  "recente_2025_26","decisao"];
+const COLS_TABELA=["ordem","cobertura_conceitos","foco_area_umida","foco_objeto",
+  "classif_tipif","multitemporal","acuracia","fusao","nuvem","metodo","metodo_qual",
+  "cit_percentil_coorte","citacoes","tese_doutorado","tipo","tipo_documental",
+  "via","via_de_origem","ano","ano_de_publicacao","primeiro_autor","autor","titulo"];
+
+function simNao(c,v){ if(!BOOL.has(c))return v; return v==="1"?"Sim":v==="0"?"Não":v; }
+
+// Títulos e resumos vindos das bases contêm marcação real (<i>, <sup>, </uri>).
+// Sem escapar, o navegador a interpreta e uma tag mal fechada desmonta a
+// tabela. Tudo que vem do CSV passa por aqui antes de virar HTML.
+function esc(v){ return String(v??"")
+  .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;"); }
+
+// Mostra um aviso no lugar da tabela, em vez de desenhar linhas vazias.
+function avisar(titulo, detalhe){
+  DADOS=[]; COLS=[];
+  document.getElementById("facetas").innerHTML="";
+  document.getElementById("tabela").innerHTML="";
+  document.getElementById("contador").textContent="—";
+  const v=document.getElementById("vazio");
+  v.style.display="block";
+  v.innerHTML=`<b>${esc(titulo)}</b><br><span style="font-size:13px">${detalhe}</span>`;
+}
+
+document.getElementById("arquivo").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f)return;
+  const nome=(f.name||"").toLowerCase();
+  if(/\.(xlsx|xls|ods)$/.test(nome)){
+    avisar("Esse é um arquivo de planilha, não o CSV.",
+      "O visualizador lê <code>lista_leitura_priorizada.<b>csv</b></code>. "+
+      "Você escolheu <code>"+esc(f.name)+"</code>, que é uma planilha do Excel. "+
+      "Os dois estão na pasta: escolha o que termina em <b>.csv</b>.");
+    e.target.value=""; return;
+  }
+  const r=new FileReader();
+  r.onload=()=>{
+    let dados=[];
+    try{ dados=parseCSV(r.result); }catch(_){ dados=[]; }
+    // Sem a coluna 'titulo' não é a lista: provavelmente outro arquivo.
+    if(!dados.length || !("titulo" in dados[0])){
+      avisar("Não reconheci este arquivo como a lista de leitura.",
+        "Esperava um CSV com uma coluna <code>titulo</code>. "+
+        "Confira se escolheu <code>lista_leitura_priorizada.csv</code>, "+
+        "gerado por <code>ranquear.py</code>.");
+      e.target.value=""; return;
+    }
+    DADOS=dados; COLS=Object.keys(DADOS[0]);
+    montarFacetas(); render(); document.getElementById("vazio").style.display="none"; };
+  r.readAsText(f,"utf-8");
+});
+function colExiste(c){return COLS.includes(c);}
+
+function montarFacetas(){
+  const div=document.getElementById("facetas"); div.innerHTML="";
+  FACET.filter(colExiste).forEach(c=>{
+    const vals=[...new Set(DADOS.map(r=>r[c]).filter(v=>v!==""))].sort((a,b)=>a-b||(""+a).localeCompare(b));
+    const lab=document.createElement("label"); lab.textContent=c.replace(/_/g," ");
+    const sel=document.createElement("select"); sel.dataset.col=c;
+    sel.innerHTML='<option value="">(todos)</option>'+vals.map(v=>`<option value="${esc(v)}">${esc(simNao(c,v))}</option>`).join("");
+    sel.onchange=render; lab.appendChild(sel); div.appendChild(lab);
+  });
+  const b=document.createElement("button"); b.textContent="limpar filtros";
+  b.onclick=()=>{document.querySelectorAll("#facetas select").forEach(s=>s.value="");document.getElementById("busca").value="";render();};
+  div.appendChild(b);
+}
+function filtrar(){
+  const q=document.getElementById("busca").value.toLowerCase();
+  const sels=[...document.querySelectorAll("#facetas select")].filter(s=>s.value!=="");
+  return DADOS.filter(r=>{
+    for(const s of sels){ if((r[s.dataset.col]||"")!==s.value) return false; }
+    if(!q) return true;
+    return ["titulo","primeiro_autor","autor","resumo","palavras_chave","periodico"].some(c=>r[c]&&r[c].toLowerCase().includes(q));
+  });
+}
+function render(){
+  let rows=filtrar();
+  if(ordCol!==null){ rows=rows.slice().sort((a,b)=>{
+    let x=a[ordCol],y=b[ordCol]; const nx=parseFloat(x),ny=parseFloat(y);
+    if(!isNaN(nx)&&!isNaN(ny)){x=nx;y=ny;} return (x<y?-1:x>y?1:0)*ordDir; }); }
+  const cols=COLS_TABELA.filter(colExiste);
+  let html="<table><thead><tr><th>decisão</th><th>disrupção</th>"+cols.map(c=>`<th data-c="${c}">${c.replace(/_/g," ")}${ordCol===c?(ordDir>0?" ▲":" ▼"):""}</th>`).join("")+"</tr></thead><tbody>";
+  rows.forEach(r=>{
+    const id=r.wid||r.doi||r.ordem||r.titulo, d=decis[id]||"";
+    const nota=(notas[id]!==undefined?notas[id]:(r.disrupcao_por_leitura||""));
+    html+=`<tr class="linha" data-id="${encodeURIComponent(id)}">`+
+      `<td><span class="dec ${d=='INCLUIR'?'inc':d=='EXCLUIR'?'exc':''}" data-id="${encodeURIComponent(id)}">${d=='INCLUIR'?'Incluir':d=='EXCLUIR'?'Excluir':'—'}</span></td>`+
+      `<td class="notacel" title="${esc(nota)}">${nota?"✎ "+esc(nota.slice(0,28))+(nota.length>28?"…":""):""}</td>`+
+      cols.map(c=>{ let v=simNao(c,r[c]??""); let cls=c=="titulo"?"titulo":"";
+        if(c=="cobertura_conceitos")cls+=r[c]=="3"?" cob3":r[c]=="2"?" cob2":"";
+        if(BOOL.has(c))cls+=v=="Sim"?" sim":v=="Não"?" nao":"";
+        return `<td class="${cls}">${esc(v)}</td>`; }).join("")+"</tr>"+
+      `<tr class="det"><td colspan="${cols.length+2}">`+
+        `<b>Título:</b> ${esc(r.titulo||"")}<br>`+
+        (r.periodico?`<b>Veículo:</b> ${esc(r.periodico)} &nbsp; `:"")+
+        (/^10\./.test(r.doi||"")?`<b>DOI:</b> <a href="https://doi.org/${encodeURI(r.doi)}" target="_blank" rel="noopener">${esc(r.doi)}</a> &nbsp; `:"")+
+        (/^https?:\/\//.test(r.url_persistente||"")?`<a href="${encodeURI(r.url_persistente)}" target="_blank" rel="noopener">link</a>`:"")+
+        `<br><b>Palavras-chave:</b> ${esc(r.palavras_chave||"—")}`+
+        `<br><b>Resumo:</b> <span class="resumo-txt">${esc(r.resumo||"—")}</span>`+
+        (r.resumo&&r.resumo!="não retornou"?` <button class="trad" data-id="${encodeURIComponent(id)}">traduzir para português</button><div class="resumo-pt"></div>`:"")+
+        `<div class="notabox"><label>Disrupção por leitura`+
+          `<span class="dica">o que a leitura revelou e a ordenação não podia ver: ` +
+          `combinação de métodos ainda não aplicada, abordagem que muda o modo de fazer, ` +
+          `trabalho de fronteira que a posição na lista subestimou</span></label>`+
+          `<textarea class="nota" data-id="${encodeURIComponent(id)}" rows="2" `+
+          `placeholder="ex.: primeiro a fundir SAR e óptico para hidroperíodo no Pantanal">${esc(nota)}</textarea>`+
+          `<span class="salvo" data-id="${encodeURIComponent(id)}"></span></div>`+
+      `</td></tr>`;
+  });
+  html+="</tbody></table>";
+  if(!rows.length)html="<div id='vazio'>Nenhum trabalho com esses filtros.</div>";
+  document.getElementById("tabela").innerHTML=html;
+  const inc=Object.values(decis).filter(v=>v=="INCLUIR").length;
+  document.getElementById("contador").textContent=rows.length+" de "+DADOS.length+" listados"+(inc?"  ·  "+inc+" incluídos":"");
+  document.querySelectorAll("th[data-c]").forEach(th=>th.onclick=()=>{const c=th.dataset.c; if(ordCol===c)ordDir=-ordDir; else{ordCol=c;ordDir=1;} render();});
+  document.querySelectorAll("tr.linha").forEach(tr=>tr.onclick=e=>{ if(e.target.classList.contains("dec"))return;
+    const det=tr.nextElementSibling; det.style.display=det.style.display=="table-row"?"none":"table-row";});
+  document.querySelectorAll(".dec").forEach(b=>b.onclick=e=>{ e.stopPropagation();
+    const id=decodeURIComponent(b.dataset.id), cur=decis[id]||"";
+    decis[id]=cur==""?"INCLUIR":cur=="INCLUIR"?"EXCLUIR":"";
+    try{localStorage.setItem("decisoes_leitura",JSON.stringify(decis));}catch(_){}
+    render();});
+  // anotação da disrupção: salva a cada tecla, sem redesenhar (não perde o foco)
+  document.querySelectorAll("textarea.nota").forEach(ta=>{
+    ta.onclick=e=>e.stopPropagation();
+    ta.oninput=()=>{
+      const id=decodeURIComponent(ta.dataset.id), v=ta.value;
+      notas[id]=v;
+      try{localStorage.setItem("notas_disrupcao",JSON.stringify(notas));}catch(_){}
+      const linha=ta.closest("tr").previousElementSibling;
+      const cel=linha&&linha.querySelector(".notacel");
+      if(cel){ cel.title=v; cel.textContent=v?"✎ "+v.slice(0,28)+(v.length>28?"…":""):""; }
+      const aviso=ta.parentElement.querySelector(".salvo");
+      if(aviso){ aviso.textContent="salvo"; clearTimeout(aviso._t);
+        aviso._t=setTimeout(()=>aviso.textContent="",1200); }
+    };
+  });
+  document.querySelectorAll(".trad").forEach(b=>b.onclick=async e=>{
+    e.stopPropagation();
+    const alvo=b.parentElement.querySelector(".resumo-pt");
+    const texto=b.parentElement.querySelector(".resumo-txt").textContent;
+    if(alvo.dataset.feito){ alvo.style.display=alvo.style.display=="none"?"block":"none"; return; }
+    b.textContent="traduzindo…"; b.disabled=true;
+    try{
+      const pt=await traduzir(texto);
+      alvo.innerHTML="<b>Tradução:</b> "+esc(pt); alvo.dataset.feito="1"; b.textContent="ocultar tradução";
+    }catch(err){
+      alvo.innerHTML="<i>Não foi possível traduzir agora (verifique a conexão).</i>"; b.textContent="traduzir para português";
+    }
+    b.disabled=false;
+  });
+}
+// tradução sob demanda (serviço público, sem chave; requer internet)
+async function traduzir(txt){
+  const partes=[]; for(let i=0;i<txt.length;i+=1800)partes.push(txt.slice(i,i+1800));
+  let out="";
+  for(const p of partes){
+    const url="https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=pt&dt=t&q="+encodeURIComponent(p);
+    const r=await fetch(url); if(!r.ok)throw new Error("http");
+    const j=await r.json(); out+=(j[0]||[]).map(s=>s[0]).join("");
+  }
+  return out;
+}
+function baixar(nome,conteudo,tipo){ const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([conteudo],{type:tipo})); a.download=nome; a.click(); }
+
+document.getElementById("btnexport").onclick=()=>{
+  if(!DADOS.length)return;
+  const cols=COLS.slice(); if(!cols.includes("decisao_inclusao"))cols.unshift("decisao_inclusao");
+  const esc=v=>{v=(v??"")+"";return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+  let out=cols.join(",")+"\n";
+  DADOS.forEach(r=>{const id=r.wid||r.doi||r.ordem||r.titulo;
+    const rr=Object.assign({},r,{
+      decisao_inclusao:decis[id]||r.decisao_inclusao||"",
+      disrupcao_por_leitura:(notas[id]!==undefined?notas[id]:(r.disrupcao_por_leitura||"")),
+    });
+    out+=cols.map(c=>esc(rr[c])).join(",")+"\n";});
+  baixar("lista_leitura_com_decisoes.csv",out,"text/csv");
+};
+
+// ---- exportação RIS (importa no Zotero) — só os INCLUÍDOS ----
+function tipoRIS(t){ t=(t||"").toLowerCase();
+  if(t.includes("thesis")||t.includes("dissert"))return "THES";
+  if(t.includes("conference"))return "CPAPER";
+  if(t.includes("book"))return "BOOK";
+  if(t.includes("report"))return "RPRT";
+  if(t.includes("data"))return "DATA";
+  return "JOUR"; }
+document.getElementById("btnris").onclick=()=>{
+  if(!DADOS.length)return;
+  const inc=DADOS.filter(r=>{const id=r.wid||r.doi||r.ordem||r.titulo; return (decis[id]||r.decisao_inclusao)=="INCLUIR";});
+  if(!inc.length){ alert("Nenhum trabalho marcado como Incluir ainda."); return; }
+  let ris="";
+  inc.forEach(r=>{
+    const id=r.wid||r.doi||r.ordem||r.titulo;
+    const L=[]; L.push("TY  - "+tipoRIS(r.tipo||r.tipo_documental));
+    if(r.titulo)L.push("TI  - "+r.titulo);
+    const au=r.primeiro_autor||r.autor||""; if(au)L.push("AU  - "+au);
+    const ano=r.ano||r.ano_de_publicacao||""; if(ano)L.push("PY  - "+ano);
+    if(r.periodico&&r.periodico!="não retornou")L.push("JO  - "+r.periodico);
+    if(r.doi&&r.doi!="não retornou")L.push("DO  - "+r.doi);
+    if(r.url_persistente&&r.url_persistente!="não retornou")L.push("UR  - "+r.url_persistente);
+    if(r.palavras_chave&&r.palavras_chave!="não retornou")
+      r.palavras_chave.split(/[;,]/).map(k=>k.trim()).filter(Boolean).forEach(k=>L.push("KW  - "+k));
+    if(r.resumo&&r.resumo!="não retornou")L.push("AB  - "+r.resumo.replace(/\r?\n/g," "));
+    const nt=(notas[id]!==undefined?notas[id]:(r.disrupcao_por_leitura||""));
+    if(nt)L.push("N1  - Disrupção por leitura: "+nt.replace(/\r?\n/g," "));
+    L.push("ER  - "); ris+=L.join("\r\n")+"\r\n\r\n";
+  });
+  baixar("incluidos_zotero.ris",ris,"application/x-research-info-systems");
+};
+
+document.getElementById("busca").addEventListener("input",render);
+try{decis=JSON.parse(localStorage.getItem("decisoes_leitura")||"{}");}catch(_){decis={};}
+try{notas=JSON.parse(localStorage.getItem("notas_disrupcao")||"{}");}catch(_){notas={};}
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+ordem_antiga,termo_novo,tipo,via,ano,autor,titulo
+5,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",data-paper,openalex,2024,Xiao Zhang,Global annual wetland dataset at 30 m with a fine classification system from 200
+68,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Jessica Rosenqvist,Mapping of Maximum and Minimum Inundation Extents in the Amazon Basin 2014–2017 
+76,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Evan R. DeLancey,Creating a Detailed Wetland Inventory with Sentinel-2 Time-Series Data and Googl
+94,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Zhanpeng Wang,"Mapping coastal wetlands in the Yellow River Delta, China during 2008–2019: impa"
+105,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Osvaldo Pereira,Estimating Water pH Using Cloud-Based Landsat Images for a New Classification of
+120,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Akbar Hossain Kanan,Land cover change across 45 years in the world’s largest mangrove forest (Sundar
+123,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Andrew Ogilvie,Combining Multi-Sensor Satellite Imagery to Improve Long-Term Monitoring of Temp
+137,inter-annual,article,openalex,2020,Amy Pickens,Mapping and sampling to characterize global inland water dynamics from 1999 to 2
+152,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Ian Olthof,"Mapping surface water dynamics (1985–2021) in the Hudson Bay Lowlands, Canada us"
+173,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2024,Suvarna Punalekar,Hierarchical-modular framework for habitat mapping through systematic and inform
+180,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Anang Dwi Purwanto,Decision Tree and Random Forest Classification Algorithms for Mangrove Forest Ma
+193,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Mingming Jia,Tracking long-term floodplain wetland changes: A case study in the China side of
+211,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Jing Zeng,A phenology-based vegetation index classification (PVC) algorithm for coastal sa
+224,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Uday Pimple,Tracking mangrove ecosystem dynamics: A remote sensing approach for species clas
+233,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Yujuan Guo,Mapping Large-Scale Mangroves along the Maritime Silk Road from 1990 to 2015 Usi
+248,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Amr E. Keshta,"Loss of Coastal Wetlands in Lake Burullus, Egypt: A GIS and Remote-Sensing Study"
+249,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Jing Lv,Forested Swamp Classification Based on Multi-Source Remote Sensing Data: A Case 
+260,inter-annual,article,openalex,2024,Anjun Lou,Long-term series wetland classification of Guangdong-Hong Kong-Macao Greater Bay
+266,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Tegan Blount,Exploring open-source multispectral satellite remote sensing as a tool to map lo
+282,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Cuixia Wei,The Change Pattern and Its Dominant Driving Factors of Wetlands in the Yellow Ri
+283,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Ziyu Wang,Annual Change Analysis of Mangrove Forests in China during 1986–2021 Based on Go
+300,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Melanie K. Vanderhoof,Mapping Wetland Burned Area from Sentinel-2 across the Southeastern United State
+316,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Tariku Zekarias,"Geospatial Analysis of Wetland Dynamics on Lake Abaya-Chamo, The Main Rift Valle"
+319,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Gregory Oakes,RadWet: An Improved and Transferable Mapping of Open Water and Inundated Vegetat
+342,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Samy Ismail Elmahdy,Monitoring Changes and Soil Characterization in Mangrove Forests of the United A
+350,decada,article,openalex,2021,Shengyang Chen,Integrating Remote Sensing and Numerical Modeling to Quantify the Water Balance 
+369,sazonal,doctoralThesis,openalex,2025,Evelyn de Castro Porto Costa,"Wetlands do estado do Rio de Janeiro: identificação, classificação e estado ambi"
+385,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",data-paper,openalex,2022,Nicholas Murray,High-resolution global maps of tidal flat ecosystems from 1984 to 2019
+407,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Luiz Artur dos Santos da Silva,Assessment of conflicts between mangroves and human occupation in Subaé river ou
+462,decada,article,openalex,2025,Jefferson William Lopes Almeida,A DINÂMICA DE USO DA TERRA NAS VEREDAS DA ÁREA DE PRESERVAÇÃO AMBIENTAL DO RIO P
+493,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Mohammed Feras Baig,Assessment of Land Use Land Cover Changes and Future Predictions Using CA-ANN Si
+500,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Weiwei Sun,Mapping China’s coastal aquaculture ponds expansion with sentinel-2 images durin
+508,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Caiyun Zhang,A Remote Sensing Technique to Upscale Methane Emission Flux in a Subtropical Pea
+510,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Md Mizanur Rahman,Remote Sensing-Based Mapping of Senescent Leaf C:N Ratio in the Sundarbans Reser
+515,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",preprint,openalex,2022,Jihong Sun,Spatiotemporal dynamics of the Liaohe Delta over the past 30 years (1987– 2017) 
+522,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,David Ketchum,IrrMapper: A Machine Learning Approach for High Resolution Mapping of Irrigated 
+535,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Deyvis Cano,Study of Ecosystem Degradation Dynamics in the Peruvian Highlands: Landsat Time-
+555,sazonal,masterThesis,openalex,2020,Jessica da Silva Costa,Uso de sensores ópticos e de micro-ondas para o mapeamento da cobertura da terra
+563,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2024,Daniel Andrade Maciel,Sentinel-1 data reveals unprecedented reduction of open water extent due to 2023
+585,decada,masterThesis,openalex,2021,Renato dos Santos ALBUQUERQUE,Integração de parâmetros ambientais e novos índices em imagens multifontes
+587,monitoreo,dissertation,openalex,2025,"Sotomayor Menchaca, Adrián",Diseño e Implementación del algoritmo de optimización PSO (Optimización por enja
+588,estacional,conference-paper,openalex,2024,Diego López-Nieta,Aproximación a la segmentación y clasificación semiautomática de dunas costeras/
+617,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Guangwei Chen,Spatiotemporal Mapping of Salt Marshes in the Intertidal Zone of China during 19
+621,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2024,Mengqi Qiu,Spatio-temporal changes and hydrological forces of wetland landscape pattern in 
+633,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2022,Neil K. Ganju,Development and Application of Landsat-Based Wetland Vegetation Cover and UnVege
+642,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Nguyen Van Thinh,Assessment of Mangrove Cover Change Based on Combining Remote Sensing Technique 
+655,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Hai-Hoa Nguyen,Classification Methods for Mapping Mangrove Extents and Drivers of Change in Tha
+686,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",conference-paper,openalex,2023,Luis Gilmer Buitrón Sulca,Influence of Climate Variability on the Spatio-temporal Dynamics of the High And
+690,sazonal,doctoralThesis,oasisbr,2025,"Kuchinski, Vinícius",Análise de características das inundações no extremo sul do Brasil
+697,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",masterThesis,oasisbr,2023,"SANTOS, Vitória Régia Sousa Rocha",Evolução de áreas de manguezais na Ilha do Maranhão com dados de Sensoriamento R
+716,inter-annual,article,openalex,2023,Wenting Wu,Unraveling Multi-Scale dynamics of estuarine wetland vegetation using the multi-
+717,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Yaling Lin,Dynamic characteristics of vegetation communities in the floodplain wetland of L
+720,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Walter Hubbard-Zamudio,Shrimp farming and mangroves: entities in conflict?
+727,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Nangware Kajia Msofe,Impact of Land Use/Cover Change on Ecosystem Service Values in the Kilombero Val
+732,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Sebastian Czapiewski,An Overview of Remote Sensing Data Applications in Peatland Research Based on Wo
+737,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Sa Wang,Spatial–Temporal Wetland Landcover Changes of Poyang Lake Derived from Landsat a
+743,decada,article,openalex,2020,Edilia Jaque Castillo,Presiones por el uso de los comunes urbanos en Áreas Metropolitanas. Caso del hu
+744,estacional,article,openalex,2020,Gustavo Benedito Medeiros Alves,Uso do Índice de Vegetação por Diferença Normalizada (NDVI) para Análise da Dist
+748,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",doctoralThesis,openalex,2020,Cesar Guerreiro Diniz,Três décadas de mudanças na planície costeira brasileira: O status dos manguezai
+752,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2024,Andressa Padovani Gil,APLICAÇÃO DO MNDWI PARA MAPEAMENTO DAS ÁREAS INUNDÁVEIS DO PANTANAL DO CUIABÁ
+756,evolucao da paisagem,article,openalex,2025,Isabel Patrícia Martins Baêta Guima,Ocorrência de áreas úmidas no domínio dos Mares de Morro: uma abordagem hidrogeo
+762,analisis temporal,article,openalex,2026,Vaniele Santana de Almeida,"Dinámica de la vegetación en la región de Pirizal (Pantanal-MT, Brasil) mediante"
+768,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2023,"Menezes, Rafael Alexandre Alves",EVOLUÇÃO ESPACIAL DA VEGETAÇÃO DE MANGUEZAL ENTRE 1972 À 2020 NA PARTE NORDESTE 
+770,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",bachelorThesis,oasisbr,2025,DJALMA FELIPE BARBOSA,ANÁLISE DAS MUDANÇAS NO USO E OCUPAÇÃO DO SOLO NA REGIÃO DA ESTRADA PARQUE (MS-1
+774,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Eleni Fitoka,Water-related ecosystems' mapping and assessment based on remote sensing techniq
+788,monitoreo,article,openalex,2026,Lisángela Espinosa Amador,La teledetección como herramienta para el monitoreo ambiental del manglar en la 
+798,decada,bachelorThesis,oasisbr,2023,"Souza, Ana Luiza Faria de [UNIFESP]",Impactos antropogênicos na dinâmica sedimentar e morfologia do canal do rio São 
+800,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2021,"MELO,Tomaz Nascimendo de",Impacts of a large hydroelectric dam on the Madeira River (Brazil) on floodplain
+826,inter-annual,article,openalex,2023,Florent Lombard,"Mangrove zonation mapping in West Africa, at 10-m resolution, optimized for inte"
+830,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Bikash Ranjan Parida,Mapping and dynamic analysis of mangrove forest during 2009–2019 using landsat–5
+841,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Mischa Bareuther,Spatio-Temporal Dynamics of Algae and Macrophyte Cover in Urban Lakes: A Remote 
+884,sazonal,article,openalex,2023,Nedilson Sanches Ferreira,VULNERABILIDADE DAS ÁREAS ÚMIDAS E INFLUÊNCIA SAZONAL DA PRECIPITAÇÃO PLUVIOMÉTR
+891,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2024,"Mendes, Rafaella Gouveia",Carbon footprints of tailings dams&apos; disasters: A study in the Brumadinho re
+904,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Xingwang Fan,Compositing the Minimum NDVI for Daily Water Surface Mapping
+909,decada,article,openalex,2024,A. Sanchez Gil,Estado de conservación de los bosques de algarrobos en La Ciénaga y Huaco (Provi
+920,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2024,Baptista João Boanha,Variação temporal e espacial da cobertura de mangue (mangal) na Baia de Sofala (
+922,decada,article,openalex,2025,Carlos Ivan Salinas Espinosa,"Clasificación de Uso del Suelo y Vegetación de Marismas Nacionales, México"
+959,decada,article,openalex,2024,Julio Calvo‐Alvarado,Versión mejorada del mapa digital de coberturas naturales de la primera edición 
+971,decada,masterThesis,oasisbr,2023,"Castro, Adão Osdayan Cândido de",Impactos da urbanização nas condições geomorfológicas da bacia hidrográfica do R
+976,inter-annual,article,openalex,2022,Ian Olthof,Dynamic surface water maps of Canada from 1984 to 2019 Landsat satellite imagery
+1004,decada,article,openalex,2022,Gabriel Paternostro Lisboa,Cinco décadas de conflitos de uso e cobertura da superfície em áreas de preserva
+1007,estacional,article,openalex,2022,Emmanuélly Maria de Souza Fernandes,Mapeamento dos fragmentos florestais da Guarnição da Aeronáutica de Pirassununga
+1013,decada,book,openalex,2025,Luiza Câmara Beserra Neta,"Cartografia geomorfológica da Serra do Tepequém, Amazónia setentrional: um estud"
+1036,sazonal,masterThesis,oasisbr,2024,"Marques, Madalena Epifânio",A geodiversidade da faixa de meandro do Rio Tarauacá: a paisagem da fisiografia 
+1038,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Becky Peremoboere Bamiekumo,"Machine learning-based flood extent mapping and damage assessment in Yenagoa, Ba"
+1059,decada,article,openalex,2026,Alejandro Román,Inteligencia Artificial Aplicada a los Drones: Escalado vs Super-Resolución en e
+1066,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",bachelorThesis,oasisbr,2022,"Simonetti, Thiago França",Análise das mudanças no uso e cobertura da terra na Bacia hidrográfica do Rio Ma
+1075,decada,article,oasisbr,2025,"dos Santos Sousa, Roneide","PLANÍCIE COSTEIRA DO ESTADO DO PIAUÍ: MAPEAMENTO DAS UNIDADES DE PAISAGEM, USO E"
+1078,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Siyamthanda Gxokwe,Multispectral Remote Sensing of Wetlands in Semi-Arid and Arid Areas: A Review o
+1079,inter-annual,article,openalex,2023,Miguel de Felipe,Thirty-four years of Landsat monitoring reveal long-term effects of groundwater 
+1080,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Tariku Zekarias,Impacts of land use/land cover change on wetland ecosystem services of Lake Abay
+1083,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,G. Anthony Pauca-Tanco,Análisis espacio temporal y climático del humedal altoandino de Chalhuanca (Perú
+1085,inter-annual,masterThesis,oasisbr,2022,"Correa, Danielle Blazys [UNESP]",Increased burned area in the Pantanal over the past two decades
+1091,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",bachelorThesis,oasisbr,2023,"Pereira, Gustavo Azaña Rezende",Identificação de áreas úmidas na região costeira leste do Estado do Rio de Janei
+1094,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",masterThesis,oasisbr,2025,"Dantas Neto, Romeu Boto",Flexibilização normativa e conflitos socioambientais: o avanço da carcinicultura
+1097,analisis temporal,article,openalex,2022,Diego Jesús Rodríguez Mauricio,Análisis temporal del NDVI del humedal de Purrumpampa en Huamachuco y su relació
+1103,sazonal,masterThesis,openalex,2022,Eduardo Nascimento Manara,Hidrodinâmica e fluxo de sedimentos no baixo amazonas : estudo do sistema de vár
+1112,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",,oasisbr,2024,"SANTOS, S. A.",Landscape dynamics of floodplain rangelands under different management units on 
+1114,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",bachelorThesis,oasisbr,2021,"Ferreira, Karina Ribeiro Muniz",Estudo dos focos de calor no Parque Nacional do Pantanal Matogrossense (2010-202
+1123,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Laura Lisbeth Buendía Buendía,"Fragmentación del manglar de Mandinga, Veracruz: evaluación mediante indicadores"
+1131,sazonal,doctoralThesis,oasisbr,2025,"Lima, Ananda Müller Postay de",A Influência do ENOS e do SAM nas condições hídricas e morfológicas da Estação E
+1134,estacional,article,openalex,2025,María Eugenia Arias,Variabilidad espacial y estacional de la vegetación. Estudio en el barrio Centro
+1137,sazonal,masterThesis,openalex,2023,Leonardo de Almeida Tavares dos Rei,Caracterização morfológica de planícies inundáveis na costa do Amapá: uma anális
+1138,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2026,Miguel Angel Palomeque de la Cruz,Cambio de uso del suelo y cobertura vegetal en la subcuenca del río San Pedro Má
+1141,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",bachelorThesis,oasisbr,2024,"Souza, Amanda Araujo de","Diagnóstico dos incêndios e queimadas na APA Baía Negra, Pantanal-MS"
+1143,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,Dhonatan Diego Pessi,Aplicação de Sensoriamento Remoto na análise das mudanças da vegetação de campos
+1144,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2024,Éllida Cilene de Oliveira Dantas,Alterações microclimáticas em área de Brejo de Altitude associadas a influência 
+1147,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2024,"Arévalos Vera, Porfirio Domingo",Four decades of soil moisture decline: a remote sensing analysis of southern ñee
+1153,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2023,María Elena Tapia,"Dinámica Costera en la Isla Puná del Golfo de Guayaquil, a partir de imágenes sa"
+1158,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",dissertation,openalex,2021,Adolfo Segundo Villamil Montes,Cambios en la cobertura vegetal y red hídrica del complejo cenagoso de Ayapel (C
+1166,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2026,Merly Carrillo-Fajardo,"Forest covers of the Sinú River basin (Córdoba, Colombia): evidence of tropical "
+1167,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2021,Sankaran Rajendran,"Monitoring oil spill in Norilsk, Russia using satellite data"
+1170,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Ariany Santos Almeida,A Influência do Uso e Ocupação do Solo para Qualidade de Água da Bacia do Mucugê
+1174,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Gerliane Kelly De Sousa Coelho,CARACTERIZAÇÃO DE FEIÇÕES MORFOLÓGICAS NO CANAL DO RIO JAGUARIBE: TRECHO LIMOEIR
+1182,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2020,Rogério Taygra de Vasconcelos Ferna,"GEOPROCESSAMENTO APLICADO A ANÁLISE DE EROSÃO COSTEIRA NO DELTA DO PIRANHAS-AÇU,"
+1189,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2024,"Capoane, Viviane",Changes in land use and land cover in a watershed on the western edge of the Par
+1193,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2020,"Siqueira de Lacerda, Israel Benjami",Preliminary study on the incidence of hot spots in protected Areas - GEF Terrest
+1196,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,oasisbr,2021,"Camargo, Pedro Luiz Teixeira",Use of SIGS for generation of maps with the Buriti (Mauritia flexuosa) middle lo
+1197,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",article,openalex,2025,Marielle Saunois,Global methane budget 2000--2020
+1199,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",preprint,openalex,2025,Mauricio Alejandro Perea Ardila,Sensoriamento remoto aplicado ao estudo dos incêndios florestais no Brasil: uma 
+1201,"(?:19|20)\d{2}\s*[-a–]{1,3}\s*(?:19|20)\d{2}",conference-paper,openalex,2021,Miguel González-Jiménez,ESTUDIO DE LA RELACIÓN ENTRE LA PIEZOMETRÍA Y LA DEFORMACIÓN DEL TERRENO EN EL A
+1203,decada,doctoralThesis,oasisbr,2022,"SOUZA, Wendson de Oliveira",InSAR para avaliação de subsidência do solo devido a ações antrópicas sobre os r

@@ -1,0 +1,83 @@
+FUNIL DE SELECAO
+gerado por relatorio_funil.py a partir dos artefatos do repositorio
+etapa de busca: lido de funil_execucao.csv (execução distribuída)
+
+base          recuperados  elegiveis  distintos
+bdtd                 4433        121          0
+core                  281         10          5
+oasisbr              9756        288        208
+openalex             5026        995        995
+TOTAL               19496       1414       1208
+
+CARACTERIZACAO (N = 1208)
+codificacao = PISO: descreve o que os trabalhos DECLARAM em titulo,
+resumo e palavras-chave, nao o que executam.
+
+   sensor_sentinel1_sar                     216 (17.9%)
+   sensor_sentinel2_optico                  346 (28.6%)
+   sensor_landsat                           426 (35.3%)
+   sensor_modis                              61 (5.0%)
+   sensor_sar_qualquer                      296 (24.5%)
+   sensor_optico_qualquer                   809 (67.0%)
+   metodo_random_forest                     234 (19.4%)
+   metodo_support_vector_machine             77 (6.4%)
+   metodo_aprendizado_profundo               97 (8.0%)
+   metodo_analise_orientada_a_objeto         66 (5.5%)
+   temporal_serie_temporal                  611 (50.6%)
+   temporal_deteccao_de_mudanca             118 (9.8%)
+   infraestrutura_nuvem                     187 (15.5%)
+   infraestrutura_cubo_de_dados               0 (0.0%)
+   validacao_relatada                       526 (43.5%)
+   derivado_fusao_sar_optico                216 (17.9%)
+
+TIPOS DO OBJETO (categorias nao exclusivas)
+   generico                         661 (54.7%)
+   manguezal                        300 (24.8%)
+   costeira_mare                    180 (14.9%)
+   brejo_pantano                    191 (15.8%)
+   planicie_inundacao               126 (10.4%)
+   pantanal                          99 (8.2%)
+   turfeira                          83 (6.9%)
+   igapo_vereda                      24 (2.0%)
+
+RECORTE 'Pantanal' (N = 99) FRENTE AO RESTANTE (N = 1109)
+os dois grupos se excluem: o recorte NAO entra na base de comparacao
+
+   atributo                       Pantanal       restante  dif. p.p.
+   Landsat                      30   30.3%    396   35.7%      -5.4
+   Sentinel-2                   19   19.2%    327   29.5%     -10.3
+   MODIS                        16   16.2%     45    4.1%      12.1
+   Radar / SAR                   3    3.0%    293   26.4%     -23.4
+   Fusão radar + óptico          2    2.0%    214   19.3%     -17.3
+   Processamento em nuvem       13   13.1%    174   15.7%      -2.6
+   Análise de acurácia          11   11.1%    515   46.4%     -35.3
+
+TIPO DOCUMENTAL
+   article                          943
+   masterThesis                      81
+   doctoralThesis                    46
+   bachelorThesis                    46
+   dissertation                      27
+   conference-paper                  20
+   preprint                          10
+   (sem tipo)                         9
+   review                             6
+   data-paper                         4
+   book-chapter                       4
+   other                              4
+   report                             2
+   conferenceObject                   2
+   book                               1
+   bookPart                           1
+   dataset                            1
+   software                           1
+
+CITACOES
+   com contagem: 995 | sem contagem: 213
+   mediana 19 | media 31.5 | maximo 502
+
+LISTA DE LEITURA (N = 1208)
+   cobertura de conceitos: 3=205, 2=496, 1=480, 0=27
+   classif_tipif                            938 (77.6%)
+   multitemporal                            623 (51.6%)
+   acuracia                                 526 (43.5%)
