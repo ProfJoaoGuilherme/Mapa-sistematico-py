@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# O QUE NÃO É VERSIONADO
+#
+# Apenas os artefatos INTERMEDIÁRIOS da busca: grandes, datados e regeráveis a
+# partir dos que estão versionados. Uma busca é um instantâneo e não se repete
+# idêntica em outra data — por isso os totais da execução de referência ficam
+# em funil_execucao.csv, que É versionado.
+#
+# Os RESULTADOS (corpus_consolidado.csv, lista_leitura_priorizada.csv,
+# geografia_trabalhos.csv, metadados_periodicos.csv, relatorio_funil.txt)
+# são versionados de propósito: sem eles os números do artigo não seriam
+# verificáveis.
+# ---------------------------------------------------------------------------
+bruto_*.csv
+log_busca.csv
+incluidos_*.csv
+excluidos_*.csv
+triagem_manual_*.csv
+repeticoes_entre_vias.csv
+
+# Exceção: o exemplo é versionado, para servir de referência de execução
+!exemplo/bruto_exemplo.csv
+
+# Figuras: específicas do artigo, não distribuídas aqui
+figura_*.png
+
+# Planilha de leitura pessoal, regerável por triar_para_tese.py
+referencias_tese.xlsx
+!exemplo/referencias_exemplo.xlsx
+
+# Chaves de acesso — nunca versionar
+.env
+*.key
+
+# Sistema
+.DS_Store
+Thumbs.db
