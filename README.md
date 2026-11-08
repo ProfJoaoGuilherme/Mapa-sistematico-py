@@ -1,7 +1,7 @@
 # Protocolo reprodutível de recuperação e curadoria de literatura
 
 [![Licença: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg)](LICENSE) [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/) [![Cite este repositório](https://img.shields.io/badge/citar-CITATION.cff-green.svg)](CITATION.cff)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21840050.svg)](https://doi.org/10.5281/zenodo.21840050)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21840049.svg)](https://doi.org/10.5281/zenodo.21840049)
 
 Converte uma busca automatizada ampla em acervos de acesso aberto numa **lista
 de leitura ordenada por relevância**, com cada passo registrado e repetível.

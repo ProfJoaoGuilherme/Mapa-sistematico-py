@@ -9,7 +9,10 @@ quem seguir sua citação precisa chegar exatamente ao que você utilizou.
 
 ---
 
-## [Não publicado]
+## [1.1.0] — 2026-11-08
+
+Nenhum número do artigo muda: a lista de leitura e o relatório do funil saem
+idênticos aos da 1.0.0.
 
 ### Adicionado
 
@@ -37,6 +40,7 @@ quem seguir sua citação precisa chegar exatamente ao que você utilizou.
 
 ### Documentação
 
+- Depósito no Zenodo passa a ser de acesso aberto.
 - Retirado do `README.md` o aviso de repositório privado.
 - Registrada no `README.md` a sobreposição entre BDTD e OASISBR.
 - Registrada no `README.md` a lacuna do léxico de acurácia (`exatidao`,

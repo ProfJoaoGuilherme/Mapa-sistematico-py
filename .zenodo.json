@@ -2,10 +2,9 @@
   "upload_type": "software",
   "title": "Protocolo reprodutível de recuperação e curadoria de literatura",
   "language": "por",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "mit",
-  "access_right": "restricted",
-  "access_conditions": "Os arquivos ficam restritos até a publicação do artigo associado nos anais do Simpósio de Geotecnologias no Pantanal. Revisores e pesquisadores interessados podem solicitar acesso indicando a finalidade; a liberação é concedida caso a caso. Após a publicação, o depósito será aberto.",
+  "access_right": "open",
   "creators": [
     {
       "name": "Machado Barbosa, João Guilherme",
@@ -28,7 +27,7 @@
       "affiliation": "Universidade do Estado de Mato Grosso (UNEMAT), Programa de Pós-Graduação em Geografia, Cáceres — MT, Brasil"
     }
   ],
-  "description": "<p>Protocolo reprodutível que converte uma busca automatizada ampla em acervos de acesso aberto (OpenAlex, OASISBR, BDTD e CORE) numa lista de leitura ordenada por relevância, com cada passo registrado e repetível.</p><p>Tudo o que é específico do tema está reunido em um único arquivo de configuração, de modo que a aplicação a outro objeto de estudo, de qualquer área da ciência, exige apenas editá-lo. Os programas do núcleo não contêm nenhuma palavra do domínio e usam apenas a biblioteca padrão do Python.</p><p>O depósito inclui os programas do protocolo, o arquivo de configuração, a interface de leitura em HTML e os artefatos da execução de referência: o corpus consolidado de 1.208 trabalhos distintos, a lista de leitura ordenada, o relatório do funil de seleção, a procedência dos metadados de periódico e a auditoria da ampliação do léxico temporal. Traz também um corpus de exemplo com 24 registros fictícios que percorre a cadeia completa.</p><p><strong>Escopo:</strong> distribui-se o protocolo e o que ele gera. Ficam de fora apenas a inferência geográfica e os programas que desenham as figuras, específicos do estudo de caso, além do texto do artigo.</p><p><strong>Indicadores datados:</strong> o Qualis distribuído é o vigente em julho de 2026 e o CiteScore o do ano de referência então publicado. A CAPES reclassifica a cada quadriênio; quem repetir o levantamento deve atualizá-los. Nenhum dos dois entra no cálculo de relevância.</p><p><strong>Limitação a declarar:</strong> a codificação incide sobre título, resumo e palavras-chave. Descreve o que os trabalhos declaram nesses campos, não o que executam. É instrumento de curadoria, adequado para ordenar e selecionar; não é instrumento de medição de prevalência de práticas.</p>",
+  "description": "<p>Protocolo reprodutível que converte uma busca automatizada ampla em acervos de acesso aberto (OpenAlex, OASISBR e CORE) numa lista de leitura ordenada por relevância, com cada passo registrado e repetível.</p><p>Tudo o que é específico do tema está reunido em um único arquivo de configuração, de modo que a aplicação a outro objeto de estudo, de qualquer área da ciência, exige apenas editá-lo. Quem não programa pode descrever o tema numa planilha e executar todo o protocolo no Google Colab, pelo navegador, seguindo o guia que acompanha o depósito. Os programas do núcleo não contêm nenhuma palavra do domínio e usam apenas a biblioteca padrão do Python.</p><p>O depósito inclui os programas do protocolo, o arquivo de configuração, a interface de leitura em HTML e os artefatos da execução de referência: o corpus consolidado de 1.208 trabalhos distintos, a lista de leitura ordenada, o relatório do funil de seleção, a procedência dos metadados de periódico e a auditoria da ampliação do léxico temporal. Traz também um corpus de exemplo com 24 registros fictícios que percorre a cadeia completa.</p><p><strong>Escopo:</strong> distribui-se o protocolo e o que ele gera. Ficam de fora apenas a inferência geográfica e os programas que desenham as figuras, específicos do estudo de caso, além do texto do artigo.</p><p><strong>Indicadores datados:</strong> o Qualis distribuído é o vigente em julho de 2026 e o CiteScore o do ano de referência então publicado. A CAPES reclassifica a cada quadriênio; quem repetir o levantamento deve atualizá-los. Nenhum dos dois entra no cálculo de relevância.</p><p><strong>Limitação a declarar:</strong> a codificação incide sobre título, resumo e palavras-chave. Descreve o que os trabalhos declaram nesses campos, não o que executam. É instrumento de curadoria, adequado para ordenar e selecionar; não é instrumento de medição de prevalência de práticas.</p>",
   "keywords": [
     "revisão de literatura",
     "mapa sistemático",
@@ -39,7 +38,8 @@
     "sensoriamento remoto",
     "áreas úmidas",
     "OpenAlex",
-    "Python"
+    "Python",
+    "Google Colab"
   ],
   "related_identifiers": [
     {
@@ -48,6 +48,5 @@
       "scheme": "url"
     }
   ],
-  "notes": "Consulta às bases realizada em 23 de julho de 2026. Uma nova execução da busca não recuperará o mesmo total de registros, porque os acervos indexam trabalhos continuamente; o que se reproduz é o procedimento. A etapa do corpus consolidado em diante é exatamente reproduzível.",
-  "doi": "10.5281/zenodo.21840050"
+  "notes": "Consulta às bases realizada em 23 de julho de 2026. Uma nova execução da busca não recuperará o mesmo total de registros, porque os acervos indexam trabalhos continuamente; o que se reproduz é o procedimento. A etapa do corpus consolidado em diante é exatamente reproduzível."
 }

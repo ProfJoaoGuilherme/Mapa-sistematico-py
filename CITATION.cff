@@ -58,10 +58,10 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21840050
     description: >-
-      DOI desta versão (v1.0.0) — use este em citações
-version: 1.0.0
-doi: 10.5281/zenodo.21840050
-date-released: '2026-08-07'
+      DOI da versão v1.0.0
+version: 1.1.0
+doi: 10.5281/zenodo.21840049
+date-released: '2026-11-08'
 preferred-citation:
   type: conference-paper
   title: >-
