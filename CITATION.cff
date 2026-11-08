@@ -56,11 +56,15 @@ identifiers:
     description: >-
       DOI conceitual, resolve sempre para a versão mais recente
   - type: doi
+    value: 10.5281/zenodo.24060699
+    description: >-
+      DOI desta versão (v1.1.0) — use este em citações
+  - type: doi
     value: 10.5281/zenodo.21840050
     description: >-
       DOI da versão v1.0.0
 version: 1.1.0
-doi: 10.5281/zenodo.21840049
+doi: 10.5281/zenodo.24060699
 date-released: '2026-11-08'
 preferred-citation:
   type: conference-paper
