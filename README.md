@@ -17,12 +17,27 @@ sensoriamento remoto de áreas úmidas: um protocolo reprodutível de recuperaç
 curadoria (2020–2026)*, e contém os programas e os artefatos que tornam os
 números do texto verificáveis.
 
-> **Estado:** repositório privado até a publicação do artigo.
->
 > **Escopo:** este repositório traz o **protocolo** e os artefatos que ele gera.
 > Ficam de fora apenas o que é específico deste estudo de caso — a inferência
 > geográfica e os programas que desenham as figuras do artigo — além do texto do
 > artigo e das próprias figuras.
+
+---
+
+## Sem programar: planilha e Google Colab
+
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ProfJoaoGuilherme/Mapa-sistematico-py/blob/main/protocolo_no_colab.ipynb)
+
+Para aplicar o protocolo ao seu tema sem escrever código:
+
+1. baixe [`modelo_configuracao.xlsx`](https://github.com/ProfJoaoGuilherme/Mapa-sistematico-py/raw/main/modelo_configuracao.xlsx)
+   e troque os termos do exemplo pelos do seu tema, em palavras comuns;
+2. clique em **Abrir no Colab** e execute as células na ordem, pelo navegador.
+
+O caderno lê a planilha, aponta o que estiver incompleto, mostra a equação de
+busca, estima o volume, executa todo o protocolo e entrega a lista de leitura
+num arquivo `.zip`. O passo a passo completo, aba por aba, está em
+**[`GUIA_SEM_PROGRAMACAO.md`](GUIA_SEM_PROGRAMACAO.md)**.
 
 ---
 
@@ -66,8 +81,18 @@ Auxiliares, independentes entre si:
 
 | Programa | O que faz | Saída |
 |---|---|---|
+| `planilha_para_config.py` | traduz a planilha de configuração em `config.py`, guardando antes o existente como `config_referencia.py` | `config.py` |
 | `gerar_metadados_periodicos.py` | monta a tabela de procedência dos metadados de periódico | `metadados_periodicos.csv` |
 | `triar_para_tese.py` | reparte a lista nos estratos de leitura definidos em `config.TRIAGEM_LEITURA` | `referencias_tese.xlsx` |
+
+Para quem não programa:
+
+| Arquivo | O que é |
+|---|---|
+| `protocolo_no_colab.ipynb` | caderno do Google Colab que executa o protocolo a partir da planilha |
+| `modelo_configuracao.xlsx` | planilha-modelo preenchida com uma versão simplificada do estudo de referência |
+| `modelo_configuracao_em_branco.xlsx` | a mesma planilha, só com cabeçalhos e explicações |
+| `GUIA_SEM_PROGRAMACAO.md` | guia detalhado do preenchimento e da execução |
 
 ---
 
@@ -141,6 +166,10 @@ desatualiza a informação de apoio à leitura.
 
 ## Adaptar a outro tema
 
+Há dois caminhos. Quem não programa preenche a planilha e usa o Colab (ver
+[`GUIA_SEM_PROGRAMACAO.md`](GUIA_SEM_PROGRAMACAO.md)). Quem prefere editar o
+código direto segue o roteiro abaixo, que dá acesso a todos os recursos.
+
 Só `config.py` muda. Os cinco programas do núcleo não contêm uma única palavra
 do domínio — verificável com:
 
@@ -159,6 +188,11 @@ Roteiro:
    intervenção; em ciências sociais, o corpus ou a técnica de coleta.
 3. **`BASES`** — OpenAlex e CORE são multidisciplinares e servem a qualquer
    campo. OASISBR e BDTD só interessam se houver produção brasileira relevante.
+   Na execução de referência, os 121 elegíveis da BDTD já tinham sido
+   recuperados pela OASISBR, porque os dois portais colhem teses do mesmo
+   repositório do IBICT. Como não acrescentou trabalho distinto, a BDTD está
+   desativada em `BASES` (`automatica=False`). Basta reativá-la se o seu tema
+   tiver teses fora da OASISBR.
 4. **`CRITERIOS`** — o que torna um trabalho elegível. Mantenha poucos
    obrigatórios e generosos: a triagem por texto erra por excesso de rigor com
    muito mais frequência do que por excesso de tolerância.
@@ -221,6 +255,22 @@ precisar dessa medição terá de ler os textos completos.
 
 Consequência prática ao reportar números: *"X% dos trabalhos que declararam
 método"* é uma afirmação defensável; *"X% dos trabalhos usam o método"* não é.
+
+### Lacuna conhecida no léxico de acurácia
+
+Os padrões de `validacao` em `config.py` não incluem as formas `exatidao` e
+`validacao`. O padrão `validat` casa com *validation*, mas não com *validação*.
+Termos usuais da produção em português, como *exatidão global*, ficam assim sem
+marcação.
+
+O efeito foi medido sobre a lista da execução de referência. Acrescentar essas
+formas marcaria no máximo mais 11 dos 1.208 trabalhos, e no recorte do Pantanal a
+acurácia passaria de 11 para no máximo 13 dos 99 trabalhos. A diferença frente
+ao restante do levantamento se mantém.
+
+O léxico não foi alterado nesta versão para não deslocar os números do artigo.
+A correção fica para a próxima versão. Quem adaptar o protocolo deve incluir
+desde já as formas em português e espanhol dos termos do seu campo.
 
 ---
 

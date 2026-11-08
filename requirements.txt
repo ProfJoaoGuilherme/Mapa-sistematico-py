@@ -4,9 +4,11 @@
 # relatorio_funil) usa APENAS a biblioteca padrão do Python — nada a instalar.
 #
 # As duas abaixo são exigidas somente pelos programas auxiliares
-# (enriquecer_periodicos, gerar_metadados_periodicos, triar_para_tese):
+# (enriquecer_periodicos, gerar_metadados_periodicos, triar_para_tese,
+# planilha_para_config):
 
 pandas>=2.0          # leitura e agregação das tabelas
-openpyxl>=3.1        # escrita da planilha de estratos de leitura
+openpyxl>=3.1        # leitura da planilha de configuração e escrita da
+                     # planilha de estratos de leitura
 
 # Requisito: Python >= 3.10

@@ -9,6 +9,42 @@ quem seguir sua citação precisa chegar exatamente ao que você utilizou.
 
 ---
 
+## [Não publicado]
+
+### Adicionado
+
+- Caminho sem programação: `modelo_configuracao.xlsx` (exemplo preenchido),
+  `modelo_configuracao_em_branco.xlsx`, `planilha_para_config.py`, que traduz
+  a planilha em `config.py`, e `protocolo_no_colab.ipynb`, que executa o
+  protocolo inteiro no Google Colab.
+- `GUIA_SEM_PROGRAMACAO.md`, com o preenchimento aba por aba, a execução no
+  Colab e a calibração dos termos.
+- `visualizador.html` passa a exibir, como colunas e filtros, os conceitos e
+  atributos de qualquer tema. A lista de referência aparece como antes.
+
+### Configuração
+
+- BDTD desativada em `config.BASES` (`automatica=False`), como declara o
+  artigo. Os 121 elegíveis dela na execução de referência já vinham pela
+  OASISBR. O corpus e a lista de leitura não mudam.
+- Crossref e Semantic Scholar desativadas em `config.BASES`
+  (`automatica=False`). Não fizeram parte da execução de referência, e
+  `buscar.py` sem argumentos passa a consultar só os acervos do artigo:
+  OpenAlex, OASISBR e CORE.
+- Restaurado `config.RECORTE_COMPARADO` (Pantanal frente ao restante), que
+  faltava na versão 1.0.0. Sem ele, `relatorio_funil.py` omitia a tabela do
+  recorte e não reproduzia o `relatorio_funil.txt` distribuído.
+
+### Documentação
+
+- Retirado do `README.md` o aviso de repositório privado.
+- Registrada no `README.md` a sobreposição entre BDTD e OASISBR.
+- Registrada no `README.md` a lacuna do léxico de acurácia (`exatidao`,
+  `validacao`), com o efeito medido sobre a lista de referência. Os números do
+  artigo não mudam.
+
+---
+
 ## [1.0.0] — 2026-08-07
 
 Primeira versão publicada, correspondente ao artigo submetido ao Simpósio de

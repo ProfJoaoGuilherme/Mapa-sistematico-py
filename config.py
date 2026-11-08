@@ -100,15 +100,18 @@ BASES = {
         "chave_env": None,   # opcional: OPENALEX_MAILTO para o 'polite pool'
         "nota": "Índice aberto; aceita AND/OR/parênteses no parâmetro search.",
     },
+    # Crossref e Semantic Scholar ficaram fora da execução de referência, que
+    # consultou quatro acervos. Os adaptadores seguem prontos em buscar.py:
+    # para usá-los, ponha automatica=True.
     "crossref": {
-        "tipo": "crossref", "automatica": True, "consulta": "matriz",
+        "tipo": "crossref", "automatica": False, "consulta": "matriz",
         "endpoint": "https://api.crossref.org/works",
         "chave_env": None,   # opcional: CROSSREF_MAILTO para o 'polite pool'
         "nota": "query.bibliographic é texto livre ranqueado; sem booleano. "
                 "Resumo frequentemente ausente — limita a triagem.",
     },
     "semanticscholar": {
-        "tipo": "semanticscholar", "automatica": True, "consulta": "matriz",
+        "tipo": "semanticscholar", "automatica": False, "consulta": "matriz",
         "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search",
         "chave_env": "S2_API_KEY",   # opcional; sem chave há limite de taxa
         "nota": "Busca por texto livre; limite de taxa sem chave.",
@@ -126,11 +129,15 @@ BASES = {
         "chave_env": None,
         "nota": "IBICT. Ver notas de HTTP 500 e field[]=rawData em buscar.py.",
     },
+    # BDTD desativada na versão final: seus 121 elegíveis na execução de
+    # referência já tinham vindo pela OASISBR, que colhe teses do mesmo
+    # repositório do IBICT. Para reativá-la, ponha automatica=True.
     "bdtd": {
-        "tipo": "vufind", "automatica": True, "consulta": "matriz",
+        "tipo": "vufind", "automatica": False, "consulta": "matriz",
         "endpoint": "https://bdtd.ibict.br/vufind/api/v1/search",
         "chave_env": None,
-        "nota": "IBICT. Teses e dissertações brasileiras.",
+        "nota": "IBICT. Teses e dissertações brasileiras. Contida na OASISBR "
+                "na execução de referência.",
     },
     # ---- Bases NÃO automatizáveis (documentadas para transparência) --------
     # Mantidas aqui com automatica=False para que a escolha fique explícita.
@@ -495,6 +502,29 @@ TRIAGEM_LEITURA = {
         "marcador": "area_de_estudo",
         "nota": "sua area de estudo, qualquer que seja o estrato conceitual",
     },
+}
+
+# -------------------------------------------------- RECORTE COMPARADO ------
+# Compara um recorte do conjunto com TODO O RESTANTE, e não com o conjunto
+# inteiro. A distinção importa: se o recorte permanecer dentro da base de
+# comparação, os mesmos trabalhos entram dos dois lados, e a sobreposição
+# sempre atenua a diferença que se quer mostrar. Aqui os dois grupos se
+# excluem e, somados, dão o total.
+#
+# Deixe RECORTE_COMPARADO = None se não houver recorte de interesse.
+RECORTE_COMPARADO = {
+    "rotulo": "Pantanal",
+    "padroes": TIPOS_OBJETO["pantanal"],
+    # Formato: (rótulo na saída, rótulo da coluna já codificada no corpus).
+    "atributos": [
+        ("Landsat",                 "sensor_landsat"),
+        ("Sentinel-2",              "sensor_sentinel2_optico"),
+        ("MODIS",                   "sensor_modis"),
+        ("Radar / SAR",             "sensor_sar_qualquer"),
+        ("Fusão radar + óptico",    "derivado_fusao_sar_optico"),
+        ("Processamento em nuvem",  "infraestrutura_nuvem"),
+        ("Análise de acurácia",     "validacao_relatada"),
+    ],
 }
 
 # ------------------------------------------------------------ OPERACIONAL ---

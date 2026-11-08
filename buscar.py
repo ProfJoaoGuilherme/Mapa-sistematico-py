@@ -7,7 +7,7 @@ Lê tudo de config.py. Não contém nada específico do tema.
 
     python3 buscar.py                 # todas as bases automáticas, 3 idiomas
     python3 buscar.py openalex        # apenas uma base
-    python3 buscar.py openalex crossref --idiomas en pt
+    python3 buscar.py openalex core --idiomas en pt
 
 Para cada base marcada `automatica=True` em config.BASES, dispara a equação
 em cada idioma de config.IDIOMAS e grava:

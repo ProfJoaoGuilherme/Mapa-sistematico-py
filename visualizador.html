@@ -112,6 +112,20 @@ const COLS_TABELA=["ordem","cobertura_conceitos","foco_area_umida","foco_objeto"
   "cit_percentil_coorte","citacoes","tese_doutorado","tipo","tipo_documental",
   "via","via_de_origem","ano","ano_de_publicacao","primeiro_autor","autor","titulo"];
 
+// Colunas próprias de outro tema (conceitos, foco e atributos da planilha):
+// ranquear.py as grava entre cobertura_conceitos e cit_percentil_coorte.
+// Entram na tabela e nos filtros; as que só têm 0 e 1 viram Sim/Não.
+function incluirColunasDoTema(){
+  const i0=COLS.indexOf("cobertura_conceitos"), i1=COLS.indexOf("cit_percentil_coorte");
+  if(i0<0 || i1<=i0) return;
+  const tema=COLS.slice(i0+1,i1).filter(c=>!COLS_TABELA.includes(c));
+  tema.forEach(c=>{
+    if(DADOS.every(r=>r[c]===""||r[c]==="0"||r[c]==="1")) BOOL.add(c);
+    if(!FACET.includes(c)) FACET.splice(FACET.indexOf("decisao"),0,c);
+  });
+  COLS_TABELA.splice(COLS_TABELA.indexOf("cit_percentil_coorte"),0,...tema);
+}
+
 function simNao(c,v){ if(!BOOL.has(c))return v; return v==="1"?"Sim":v==="0"?"Não":v; }
 
 // Títulos e resumos vindos das bases contêm marcação real (<i>, <sup>, </uri>).
@@ -155,6 +169,7 @@ document.getElementById("arquivo").addEventListener("change",e=>{
       e.target.value=""; return;
     }
     DADOS=dados; COLS=Object.keys(DADOS[0]);
+    incluirColunasDoTema();
     montarFacetas(); render(); document.getElementById("vazio").style.display="none"; };
   r.readAsText(f,"utf-8");
 });
